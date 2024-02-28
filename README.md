@@ -3,6 +3,7 @@
 ## Documentation
 
 - [**Overview**](#overview)
+- [**Contributing**](#contributing)
 - [**License**](#license)
 
 ## Overview
@@ -11,6 +12,21 @@ BioEngine Desktop is a graphical interface that enables users to install and sta
 
 BioEngine Desktop is developed on top of Podman Desktop to provide a robust interface to managing and running a podman pod on your machine. 
 
+## Contributing
+
+### Dev requirements
+
+To build and develop this project, you will need `node` (v20 or above recommended), and `yarn`. 
+
+### Getting started
+
+To get started with development and testing of Bioengine Desktop on your own machine, clone this repository and then run the following commands in the 
+project root: 
+
+```terminal
+yarn install
+yarn run watch
+```
 
 ## License
 
