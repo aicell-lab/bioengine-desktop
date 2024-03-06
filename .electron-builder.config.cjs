@@ -65,8 +65,8 @@ async function addElectronFuses(context) {
  * @see https://www.electron.build/configuration/configuration
  */
 const config = {
-  productName: 'Podman Desktop',
-  appId: 'io.podman_desktop.PodmanDesktop',
+  productName: 'BioEngine Desktop',
+  appId: 'io.aicell.BioEngineDesktop',
   directories: {
     output: 'dist',
     buildResources: 'buildResources',
@@ -112,10 +112,10 @@ const config = {
   },
   files: ['packages/**/dist/**', 'extensions/**/builtin/*.cdix/**'],
   portable: {
-    artifactName: `podman-desktop${artifactNameSuffix}-\${version}-\${arch}.\${ext}`,
+    artifactName: `bioengine-desktop${artifactNameSuffix}-\${version}-\${arch}.\${ext}`,
   },
   nsis: {
-    artifactName: `podman-desktop${artifactNameSuffix}-\${version}-setup-\${arch}.\${ext}`,
+    artifactName: `bioengine-desktop${artifactNameSuffix}-\${version}-setup-\${arch}.\${ext}`,
   },
   win: {
     target: [
@@ -152,12 +152,12 @@ const config = {
       '--talk-name=org.freedesktop.Notifications',
     ],
     useWaylandFlags: 'false',
-    artifactName: 'podman-desktop-${version}.${ext}',
+    artifactName: 'bioengine-desktop-${version}.${ext}',
     runtimeVersion: '23.08',
     branch: 'main',
     files: [
-      ['.flatpak-appdata.xml', '/share/metainfo/io.podman_desktop.PodmanDesktop.metainfo.xml'],
-      ['buildResources/icon-512x512.png', '/share/icons/hicolor/512x512/apps/io.podman_desktop.PodmanDesktop.png'],
+      ['.flatpak-appdata.xml', '/share/metainfo/io.aicell.BioEngineDesktop.metainfo.xml'],
+      ['buildResources/icon-512x512.png', '/share/icons/hicolor/512x512/apps/io.aicell.BioEngineDesktop.png'],
     ],
   },
   linux: {
@@ -167,7 +167,7 @@ const config = {
   },
   afterSign: 'electron-builder-notarize',
   mac: {
-    artifactName: `podman-desktop${artifactNameSuffix}-\${version}-\${arch}.\${ext}`,
+    artifactName: `bioengine-desktop${artifactNameSuffix}-\${version}-\${arch}.\${ext}`,
     hardenedRuntime: true,
     entitlements: './node_modules/electron-builder-notarize/entitlements.mac.inherit.plist',
     target: {
@@ -191,8 +191,8 @@ const config = {
     ],
   },
   protocols: {
-    name: 'Podman Desktop',
-    schemes: ['podman-desktop'],
+    name: 'BioEngine Desktop',
+    schemes: ['bioengine-desktop'],
     role: "Editor"
   },
   publish: {

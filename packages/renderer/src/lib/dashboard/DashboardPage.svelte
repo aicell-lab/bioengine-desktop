@@ -12,6 +12,7 @@ import { DoNothingMode } from './ProviderInitUtils';
 import FeaturedExtensions from '/@/lib/featured/FeaturedExtensions.svelte';
 import ProviderConfiguring from '/@/lib/dashboard/ProviderConfiguring.svelte';
 import NotificationsBox from './NotificationsBox.svelte';
+import BioEngineDashboard from './BioEngineDashboard.svelte';
 
 const providerInitContexts = new Map<string, InitializationContext>();
 
@@ -38,6 +39,9 @@ function getInitializationContext(id: string): InitializationContext {
   <div slot="content" class="flex flex-col min-w-full h-fit bg-charcoal-700 shadow-nav py-5">
     <div class="min-w-full flex-1">
       <NotificationsBox />
+      <div class="px-5 space-y-5 h-full">
+        <BioEngineDashboard />
+      </div>
       <div class="px-5 space-y-5 h-full">
         <!-- Provider is ready display a box to indicate some information -->
         {#if providersReady.length > 0}

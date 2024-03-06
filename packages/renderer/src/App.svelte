@@ -95,7 +95,7 @@ window.events?.receive('display-troubleshooting', () => {
         <Route path="/" breadcrumb="Dashboard Page">
           <DashboardPage />
         </Route>
-        <Route path="/bioengine" breadcrumb="Bioengine">
+        <Route path="/bioengine" breadcrumb="BioEngine">
           <BioEnginePage />
         </Route>
         <Route path="/kaibu" breadcrumb="Kaibu">

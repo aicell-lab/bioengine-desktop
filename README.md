@@ -20,7 +20,7 @@ To build and develop this project, you will need `node` (v20 or above recommende
 
 ### Getting started
 
-To get started with development and testing of Bioengine Desktop on your own machine, clone this repository and then run the following commands in the 
+To get started with development and testing of BioEngine Desktop on your own machine, clone this repository and then run the following commands in the 
 project root: 
 
 ```terminal

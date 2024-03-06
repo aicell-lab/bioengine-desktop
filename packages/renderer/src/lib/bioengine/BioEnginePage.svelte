@@ -3,7 +3,7 @@
   import Button from '../ui/Button.svelte';
   import { faRocket } from '@fortawesome/free-solid-svg-icons';
 
-  let startingBioengine = false;
+  let startingBioEngine = false;
 </script>
 
 
@@ -14,7 +14,7 @@
         on:click="{() => {}}"
         aria-label="Start BioEngine"
         title="Start BioEngine"
-        bind:inProgress="{startingBioengine}"
+        bind:inProgress="{startingBioEngine}"
         icon="{faRocket}">
       </Button>
     </div>

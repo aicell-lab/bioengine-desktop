@@ -143,13 +143,21 @@ export let meta: TinroRouteMeta;
       <NewContentOnDashboardBadge />
     </div>
   </NavItem>
-  <NavItem href="/bioengine" tooltip="BioEngine" ariaLabel="BioEngine" bind:meta="{meta}">
+  <NavItem href="/kaibu" tooltip="Kaibu" ariaLabel="Kaibu" bind:meta="{meta}">
     <BioEngineIcon size="24" />
   </NavItem>
-  <NavItem href="/kaibu" tooltip="Kaibu" ariaLabel="Kaibu" bind:meta="{meta}">
-    Kai
-  </NavItem>
-  <!--NavItem href="/containers" tooltip="Containers{containerCount}" ariaLabel="Containers" bind:meta="{meta}">
+
+  {#if $contributions.length > 0}
+    <div class="mx-3 my-2 h-[1px] bg-zinc-600"></div>
+  {/if}
+  {#each $contributions as contribution}
+    <NavItem href="/contribs/{contribution.name}" tooltip="{contribution.name}" bind:meta="{meta}">
+      <img src="{contribution.icon}" width="24" height="24" alt="{contribution.name}" />
+    </NavItem>
+  {/each}
+
+  <div class="grow"></div>
+  <NavItem href="/containers" tooltip="Containers{containerCount}" ariaLabel="Containers" bind:meta="{meta}">
     <ContainerIcon size="24" />
   </NavItem>
   <NavItem href="/pods" tooltip="Pods{podCount}" ariaLabel="Pods" bind:meta="{meta}">
@@ -169,18 +177,6 @@ export let meta: TinroRouteMeta;
       <ServiceIcon size="24" />
     </NavItem>
   {/if}
-  -->
-
-  {#if $contributions.length > 0}
-    <div class="mx-3 my-2 h-[1px] bg-zinc-600"></div>
-  {/if}
-  {#each $contributions as contribution}
-    <NavItem href="/contribs/{contribution.name}" tooltip="{contribution.name}" bind:meta="{meta}">
-      <img src="{contribution.icon}" width="24" height="24" alt="{contribution.name}" />
-    </NavItem>
-  {/each}
-
-  <div class="grow"></div>
 
   <NavItem
     href="/preferences"
