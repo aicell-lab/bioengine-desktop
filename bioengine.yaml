@@ -1,0 +1,216 @@
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hypha-app
+  labels:
+    app: hypha-app
+spec:
+  containers:
+    - name: triton
+      image: nvcr.io/nvidia/tritonserver:23.03-py3
+      securityContext:
+        capabilities:
+          add:
+            - IPC_LOCK
+      resources:
+        limits:
+          memory: 6Gi
+      volumeMounts:
+        - name: model-repository
+          mountPath: /models
+        - name: model-snapshots-directory
+          mountPath: /model-snapshots
+      ports:
+        - containerPort: 8000
+          hostPort: 8000
+      env:
+        - name: MODEL_SNAPSHOTS_DIRECTORY
+          value: /model-snapshots
+        - name: TF_FORCE_GPU_ALLOW_GROWTH
+          value: "true"
+      command:
+        - "/bin/bash"
+        - "-c"
+        - "tritonserver --model-repository=/models --log-verbose=3 --log-info=1 --log-warning=1 --log-error=1 --model-control-mode=poll --exit-on-error=false --repository-poll-secs=10"
+      livenessProbe:
+        httpGet:
+          path: /v2/health/live
+          port: 8000
+        initialDelaySeconds: 30
+        periodSeconds: 30
+        timeoutSeconds: 20
+        failureThreshold: 100
+
+    - name: redis
+      image: redis:6.2.6
+      env:
+        - name: REDIS_PASSWORD
+          value: hr6hZTqmzapyveyI5CHr1HWPnVKpQkpV
+      command:
+        - "redis-server"
+        - "--save"
+        - "20"
+        - "1"
+        - "--loglevel"
+        - "warning"
+        - "--requirepass"
+        - "$(REDIS_PASSWORD)"
+      volumeMounts:
+        - name: hypha-redis
+          mountPath: /data
+      ports:
+        - containerPort: 6379
+      livenessProbe:
+        exec:
+          command:
+            - "redis-cli"
+            - "ping"
+        initialDelaySeconds: 10
+        periodSeconds: 10
+        timeoutSeconds: 30
+        failureThreshold: 30
+
+    - name: hypha
+      image: ghcr.io/amun-ai/hypha:0.15.8
+      env:
+        - name: S3_ENDPOINT_URL
+          value: http://127.0.0.1:9000
+        - name: S3_ENDPOINT_PUBLIC_URL
+          value: http://127.0.0.1:9000
+        - name: S3_ACCESS_KEY
+          value: europas3
+        - name: S3_SECRET_KEY
+          value: LE8cLOKBDvnkeBc5besleZ4dAX8IwHPM
+        - name: REDIS_PASSWORD
+          value: hr6hZTqmzapyveyI5CHr1HWPnVKpQkpV
+        - name: AUTH0_AUDIENCE 
+          value: https://imjoy.eu.auth0.com/api/v2/
+        - name: AUTH0_DOMAIN
+          value: imjoy.eu.auth0.com
+        - name: JWT_SECRET 
+          value: 352esl345IEo3kjsw3fsdf39sdfl3K23KJE#D*#4d
+      command:
+        - "python"
+        - "-m"
+        - "hypha.server"
+        - "--host=0.0.0.0"
+        - "--port=9520"
+        - "--redis-uri=redis://:$(REDIS_PASSWORD)@redis:6379/0"
+        - "--reset-redis"
+        - "--triton-servers=http://triton:8000"
+        - "--public-base-url=https://ai.imjoy.io"
+        - "--enable-server-apps"
+        - "--in-docker"
+        - "--enable-s3"
+        - "--endpoint-url=$(S3_ENDPOINT_URL)"
+        - "--endpoint-url-public=$(S3_ENDPOINT_PUBLIC_URL)"
+        - "--access-key-id=$(S3_ACCESS_KEY)"
+        - "--secret-access-key=$(S3_SECRET_KEY)"
+        - "--apps-dir=/home/hypha-apps"
+        - "--executable-path=/home/bin"
+      volumeMounts:
+        - name: hypha-apps
+          mountPath: /home/hypha-apps
+      workingDir: /home
+      ports:
+        - containerPort: 9520
+          hostPort: 8080
+      livenessProbe:
+        exec:
+          command:
+            - "wget"
+            - "--no-verbose"
+            - "--tries=1"
+            - "http://localhost:9520/health/liveness"
+          initialDelaySeconds: 30
+          periodSeconds: 30
+          timeoutSeconds: 20
+          failureThreshold: 3
+      dependsOn:
+        - minio
+        - redis
+
+    - name: minio
+      image: quay.io/minio/minio  #   minio/minio:RELEASE.2022-09-01T23-53-36Z.fips
+      env:
+        - name: MINIO_ROOT_USER
+          value: europas3
+        - name: MINIO_ROOT_PASSWORD
+          value: LE8cLOKBDvnkeBc5besleZ4dAX8IwHPM
+
+      command:
+        - "minio"
+        - "server"
+        - "/data"
+        - "--console-address"
+        - ":9001"
+      volumeMounts:
+        - name: data-root
+          mountPath: /data
+      ports:
+        - containerPort: 9000
+        - containerPort: 9001
+      livenessProbe:
+        httpGet:
+          path: /minio/health/live
+          port: 9000
+        initialDelaySeconds: 30
+        periodSeconds: 30
+        timeoutSeconds: 20
+        failureThreshold: 3
+
+  volumes:
+    - name: model-repository
+      hostPath:
+        path: "data/models"
+    - name: model-snapshots-directory
+      hostPath:
+        path: "data/model-snapshots"
+    - name: hypha-redis
+      hostPath:
+        path: "data/hypha-redis"
+    - name: hypha-apps
+      hostPath:
+        path: "data/hypha-apps"
+    - name: data-root
+      hostPath:
+        path: "data"
+
+  restartPolicy: Always
+  dnsPolicy: ClusterFirst
+  networks:
+    - name: hypha-app-engine
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hypha
+  labels:
+    run: hypha
+spec:
+  ports:
+  - port: 9520
+    protocol: TCP
+    targetPort: 9520
+  selector:
+    run: hypha
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: triton
+  labels:
+    run: triton
+spec:
+  ports:
+  - port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    run: triton
+
