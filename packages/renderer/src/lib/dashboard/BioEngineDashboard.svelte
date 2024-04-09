@@ -4,10 +4,11 @@ import Link from '../ui/Link.svelte';
 import {default as Status} from '../ui/ProviderStatus.svelte';
 import BioEngineControl from './BioEngineControl.svelte';
 import BioEngineIcon from '../images/BioEngineIcon.svelte';
+import {BioEngine} from '../../../../bioengine/src/bioengine';
 const version="";
 
-
-let bioengine_status="installed";
+let bioengine = new BioEngine();
+let bioengine_status = bioengine.get_status();
 const links = [
   {title: "Docs", url: "https://bioimage-io.github.io/bioengine/"}
 
@@ -39,7 +40,7 @@ const links = [
           </p>
         </div>
 
-        <BioEngineControl status={bioengine_status}/>
+        <BioEngineControl {bioengine}/>
       <!-- From slot contents for provider ready component -->
       <!--
       {#if provider.containerConnections.length > 0}

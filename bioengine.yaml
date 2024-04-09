@@ -43,7 +43,7 @@ spec:
         failureThreshold: 100
 
     - name: redis
-      image: redis:6.2.6
+      image: docker.io/redis:6.2.6
       env:
         - name: REDIS_PASSWORD
           value: hr6hZTqmzapyveyI5CHr1HWPnVKpQkpV
@@ -84,11 +84,11 @@ spec:
           value: LE8cLOKBDvnkeBc5besleZ4dAX8IwHPM
         - name: REDIS_PASSWORD
           value: hr6hZTqmzapyveyI5CHr1HWPnVKpQkpV
-        - name: AUTH0_AUDIENCE 
+        - name: AUTH0_AUDIENCE
           value: https://imjoy.eu.auth0.com/api/v2/
         - name: AUTH0_DOMAIN
           value: imjoy.eu.auth0.com
-        - name: JWT_SECRET 
+        - name: JWT_SECRET
           value: 352esl345IEo3kjsw3fsdf39sdfl3K23KJE#D*#4d
       command:
         - "python"

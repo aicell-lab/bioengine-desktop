@@ -150,8 +150,8 @@
     "format:fix": "prettier --write \"**/*.ts\" \"scripts/*.js\""
   },
   "dependencies": {
-    "@podman-desktop/api": "^0.0.1",
     "@octokit/rest": "^20.0.2",
+    "@podman-desktop/api": "^0.0.1",
     "shell-path": "^3.0.0"
   },
   "devDependencies": {

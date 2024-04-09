@@ -60,6 +60,9 @@ async function playKubeFile(): Promise<void> {
     // depending on the user choice, do podman or kubernetes
     if (userChoice === 'podman') {
       try {
+        console.log("YAML FILE: ")
+        console.log(kubernetesYamlFilePath)
+        console.log(selectedProvider);
         const result = await window.playKube(kubernetesYamlFilePath, selectedProvider);
 
         // remove the null values from the result
