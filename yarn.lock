@@ -9474,7 +9474,7 @@ __metadata:
     postcss: "npm:^8.4.33"
     postcss-load-config: "npm:^5.0.2"
     svelte: "npm:4.2.8"
-    svelte-check: "npm:^3.6.2"
+    svelte-check: "npm:^3.6.9"
     svelte-eslint-parser: "npm:^0.33.1"
     svelte-fa: "npm:^3.0.4"
     svelte-preprocess: "npm:^5.1.3"
@@ -10582,9 +10582,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-check@npm:^3.6.2":
-  version: 3.6.5
-  resolution: "svelte-check@npm:3.6.5"
+"svelte-check@npm:^3.6.9":
+  version: 3.6.9
+  resolution: "svelte-check@npm:3.6.9"
   dependencies:
     "@jridgewell/trace-mapping": "npm:^0.3.17"
     chokidar: "npm:^3.4.1"
@@ -10592,13 +10592,13 @@ __metadata:
     import-fresh: "npm:^3.2.1"
     picocolors: "npm:^1.0.0"
     sade: "npm:^1.7.4"
-    svelte-preprocess: "npm:^5.1.0"
+    svelte-preprocess: "npm:^5.1.3"
     typescript: "npm:^5.0.3"
   peerDependencies:
     svelte: ^3.55.0 || ^4.0.0-next.0 || ^4.0.0 || ^5.0.0-next.0
   bin:
     svelte-check: bin/svelte-check
-  checksum: 10c0/0f6b7b9a7345c99ee51c7e961360ae2e42811fe579abb4539babf68ed4cc61d522c746e8ec0e899d93ca710ec40a99e1a745952c6ed34761135d542a80be04d3
+  checksum: 10c0/9d05208d74041f10b4176a74481acf7f1c729eddcacfce5be180cdf41059655746591ffbca6ac5bdd53aede7ce135d09bd97ec523416cdd92ca82eed76df4306
   languageName: node
   linkType: hard
 
@@ -10636,7 +10636,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-preprocess@npm:^5.1.0, svelte-preprocess@npm:^5.1.3":
+"svelte-preprocess@npm:^5.1.3":
   version: 5.1.3
   resolution: "svelte-preprocess@npm:5.1.3"
   dependencies:
