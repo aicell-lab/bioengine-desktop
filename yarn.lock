@@ -2951,7 +2951,7 @@ __metadata:
     electron-context-menu: "npm:^3.6.1"
     electron-devtools-installer: "npm:^3.2.0"
     electron-updater: "npm:6.1.7"
-    electron-util: "npm:^0.17.2"
+    electron-util: "npm:^0.18.1"
     emoji-regex: "npm:^10.3.0"
     eslint: "npm:^8.56.0"
     eslint-import-resolver-custom-alias: "npm:^1.3.2"
@@ -4449,17 +4449,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-is-dev@npm:^1.1.0":
-  version: 1.2.0
-  resolution: "electron-is-dev@npm:1.2.0"
-  checksum: 10c0/56a4c8e9b9eb7d43da86ee63093b80b32e3fb92cc5e4a60a6b7cacafcdf456ec2c6102d90fa5919fb8b03c61848d4bfa2db820349c5abd9f19e73f7afd2dc22d
-  languageName: node
-  linkType: hard
-
 "electron-is-dev@npm:^2.0.0":
   version: 2.0.0
   resolution: "electron-is-dev@npm:2.0.0"
   checksum: 10c0/aa540115f144f9c8c788e13fc581be7b0f9f83422eecb940af6367c67d63c3a656e03ad9c1138f17bcfbafc9edca8b83f655feff24dead2cc4866169c6e565f9
+  languageName: node
+  linkType: hard
+
+"electron-is-dev@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "electron-is-dev@npm:3.0.1"
+  checksum: 10c0/80d37d61d44b8b7af0af90eab622b09e0f165afbc2560297c760356efa93fcb54dbbd13d4d6522da6474e261d630b76b804c86385564a1f3062d28fc59c340bd
   languageName: node
   linkType: hard
 
@@ -4511,13 +4511,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron-util@npm:^0.17.2":
-  version: 0.17.2
-  resolution: "electron-util@npm:0.17.2"
+"electron-util@npm:^0.18.1":
+  version: 0.18.1
+  resolution: "electron-util@npm:0.18.1"
   dependencies:
-    electron-is-dev: "npm:^1.1.0"
-    new-github-issue-url: "npm:^0.2.1"
-  checksum: 10c0/73ca681c8db935dbb3041d5a5e8ad1ac916a4cef141909fd379ca2d08b528ea42d949fb04bf4eb2fdc65e1e14e4d5b1b49d9b9d01f2810c3c8b9343f26e449b6
+    electron-is-dev: "npm:^3.0.1"
+    new-github-issue-url: "npm:^1.0.0"
+  checksum: 10c0/e8030df81cce2055740f542538bb322e54ece33a9d0aad061a8570cddadfdd366ed3d80da27a889a19202d0ae94a6dcd373f10e442a060a24480939814db440a
   languageName: node
   linkType: hard
 
@@ -8266,10 +8266,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"new-github-issue-url@npm:^0.2.1":
-  version: 0.2.1
-  resolution: "new-github-issue-url@npm:0.2.1"
-  checksum: 10c0/64dcfa7a181c8ac2a33f2329c7167289c4fa9b75e1f47f635f63b99d3f442cbb02f67db9fc56a17774a2a91fa94546889baf54799cb701bd5031377d6793c406
+"new-github-issue-url@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "new-github-issue-url@npm:1.0.0"
+  checksum: 10c0/6e255d55d62b1e772ee94a0aad7713d61f8cb35d20f3fc5cd5c3e7b62db57e6bb426ed922c8014a83e437a6e07756f721a5b3b9c355ae8b97e24ad302c52f248
   languageName: node
   linkType: hard
 
