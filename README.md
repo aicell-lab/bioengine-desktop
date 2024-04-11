@@ -28,6 +28,9 @@ yarn install
 yarn run watch
 ```
 
+![Start screen](docs/screenshot_start.png)
+
+
 ## License
 
 Licensed under [Apache 2.0](LICENSE).
