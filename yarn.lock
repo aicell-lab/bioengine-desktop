@@ -6172,10 +6172,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"humanize-duration@npm:^3.31.0":
-  version: 3.31.0
-  resolution: "humanize-duration@npm:3.31.0"
-  checksum: 10c0/a78612f6920bd1348401632f4d707da877878473d0b92b6df4c8eff65700365715daae3238324a2c49e25dbddd5d033d5acbb85edc1551eb5f6120a61eb3fd2b
+"humanize-duration@npm:^3.32.1":
+  version: 3.32.1
+  resolution: "humanize-duration@npm:3.32.1"
+  checksum: 10c0/76cadedd4c5552912f04955a65e8776ce540da1c5e88bc8873a55fed20f312d0875d1642f13d4cd275dd837b19b8f10e460cbdddfc9e5596bf0dbcb383c11ec6
   languageName: node
   linkType: hard
 
@@ -9465,7 +9465,7 @@ __metadata:
     electron-context-menu: "npm:^3.6.1"
     eslint-plugin-svelte: "npm:^2.35.1"
     filesize: "npm:^10.1.0"
-    humanize-duration: "npm:^3.31.0"
+    humanize-duration: "npm:^3.32.1"
     jsdom: "npm:^23.2.0"
     micromark: "npm:^4.0.0"
     micromark-extension-directive: "npm:^3.0.0"
