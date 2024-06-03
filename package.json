@@ -161,7 +161,7 @@
     "date.js": "^0.3.3",
     "dockerode": "^4.0.2",
     "electron-context-menu": "^3.6.1",
-    "electron-updater": "6.1.7",
+    "electron-updater": "6.2.1",
     "electron-util": "^0.17.2",
     "emoji-regex": "^10.3.0",
     "g": "^2.0.1",
