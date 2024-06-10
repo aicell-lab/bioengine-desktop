@@ -2945,7 +2945,7 @@ __metadata:
     date.js: "npm:^0.3.3"
     dockerode: "npm:^4.0.2"
     dts-for-context-bridge: "npm:0.7.1"
-    electron: "npm:27.1.3"
+    electron: "npm:31.0.0"
     electron-builder: "npm:^24.12.0"
     electron-builder-notarize: "npm:^1.5.1"
     electron-context-menu: "npm:^3.6.1"
@@ -4521,16 +4521,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"electron@npm:27.1.3":
-  version: 27.1.3
-  resolution: "electron@npm:27.1.3"
+"electron@npm:31.0.0":
+  version: 31.0.0
+  resolution: "electron@npm:31.0.0"
   dependencies:
     "@electron/get": "npm:^2.0.0"
-    "@types/node": "npm:^18.11.18"
+    "@types/node": "npm:^20.9.0"
     extract-zip: "npm:^2.0.1"
   bin:
     electron: cli.js
-  checksum: 10c0/5d64daa62159cf92b08baaf764c83912098d8852443e7c05bb822b1f98a34cf3410253c37e19ca5a9c8e6d128d1097153193e282112877a63eaaec09c7edf857
+  checksum: 10c0/1030a670969465744e1edf11117ce0f1367622b6bf1346ae1250fea2e3091077aa5571c25bca9e8d27d7c9666cd718496f2fc3dbaf64da313b4e047ba93bdf86
   languageName: node
   linkType: hard
 
