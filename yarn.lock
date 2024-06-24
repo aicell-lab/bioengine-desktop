@@ -4846,12 +4846,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-compat-utils@npm:^0.1.2":
-  version: 0.1.2
-  resolution: "eslint-compat-utils@npm:0.1.2"
+"eslint-compat-utils@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "eslint-compat-utils@npm:0.5.1"
+  dependencies:
+    semver: "npm:^7.5.4"
   peerDependencies:
     eslint: ">=6.0.0"
-  checksum: 10c0/023fe1422eb5dfebe71e118fe144836f28c06b1f4d55ef4c1c42ec2dbfa3e09f19287b0092881aad307429cf247fec9ade603e050392033106d26bc981d82ee5
+  checksum: 10c0/325e815205fab70ebcd379f6d4b5d44c7d791bb8dfe0c9888233f30ebabd9418422595b53a781b946c768d9244d858540e5e6129a6b3dd6d606f467d599edc6c
   languageName: node
   linkType: hard
 
@@ -4996,29 +4998,28 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-svelte@npm:^2.35.1":
-  version: 2.35.1
-  resolution: "eslint-plugin-svelte@npm:2.35.1"
+"eslint-plugin-svelte@npm:^2.41.0":
+  version: 2.41.0
+  resolution: "eslint-plugin-svelte@npm:2.41.0"
   dependencies:
-    "@eslint-community/eslint-utils": "npm:^4.2.0"
-    "@jridgewell/sourcemap-codec": "npm:^1.4.14"
-    debug: "npm:^4.3.1"
-    eslint-compat-utils: "npm:^0.1.2"
+    "@eslint-community/eslint-utils": "npm:^4.4.0"
+    "@jridgewell/sourcemap-codec": "npm:^1.4.15"
+    eslint-compat-utils: "npm:^0.5.1"
     esutils: "npm:^2.0.3"
-    known-css-properties: "npm:^0.29.0"
-    postcss: "npm:^8.4.5"
+    known-css-properties: "npm:^0.34.0"
+    postcss: "npm:^8.4.38"
     postcss-load-config: "npm:^3.1.4"
     postcss-safe-parser: "npm:^6.0.0"
-    postcss-selector-parser: "npm:^6.0.11"
-    semver: "npm:^7.5.3"
-    svelte-eslint-parser: "npm:>=0.33.0 <1.0.0"
+    postcss-selector-parser: "npm:^6.1.0"
+    semver: "npm:^7.6.2"
+    svelte-eslint-parser: "npm:^0.39.2"
   peerDependencies:
-    eslint: ^7.0.0 || ^8.0.0-0
-    svelte: ^3.37.0 || ^4.0.0
+    eslint: ^7.0.0 || ^8.0.0-0 || ^9.0.0-0
+    svelte: ^3.37.0 || ^4.0.0 || ^5.0.0-next.155
   peerDependenciesMeta:
     svelte:
       optional: true
-  checksum: 10c0/653cb18a6ca20836b69be5cdd6525e4b9c0c9d15e1ff81992680322653d92f7f37021bfc6a58deba6d2f1661bbd394daed292a71d2c0127751946026df3fc7e9
+  checksum: 10c0/5b0b58439765b916c61ff81b632f0df72f60676aaacb0c0fb06277c784ff8bd7d72c3bcbfafc94b2cc74e66d748df9b7d4273084e65999627b1d8f431439224a
   languageName: node
   linkType: hard
 
@@ -7130,10 +7131,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"known-css-properties@npm:^0.29.0":
-  version: 0.29.0
-  resolution: "known-css-properties@npm:0.29.0"
-  checksum: 10c0/f66e9992097b8f54e97dbe729943d4a11b8d3ba15f68dbb3deb8bb0122cb89c22c90c9221ecb1e3f2e236838fe3c0faae319b43908c81b6e254ac43cafde2906
+"known-css-properties@npm:^0.34.0":
+  version: 0.34.0
+  resolution: "known-css-properties@npm:0.34.0"
+  checksum: 10c0/8549969f02b1858554e89faf4548ece37625d0d21b42e8d54fa53184e68e1512ef2531bb15941575ad816361ab7447b598c1b18c1b96ce0a868333d1a68f2e2c
   languageName: node
   linkType: hard
 
@@ -9063,7 +9064,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-scss@npm:^4.0.8":
+"postcss-scss@npm:^4.0.8, postcss-scss@npm:^4.0.9":
   version: 4.0.9
   resolution: "postcss-scss@npm:4.0.9"
   peerDependencies:
@@ -9082,6 +9083,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-selector-parser@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "postcss-selector-parser@npm:6.1.0"
+  dependencies:
+    cssesc: "npm:^3.0.0"
+    util-deprecate: "npm:^1.0.2"
+  checksum: 10c0/91e9c6434772506bc7f318699dd9d19d32178b52dfa05bed24cb0babbdab54f8fb765d9920f01ac548be0a642aab56bce493811406ceb00ae182bbb53754c473
+  languageName: node
+  linkType: hard
+
 "postcss-value-parser@npm:^4.0.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
@@ -9089,7 +9100,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.23, postcss@npm:^8.4.29, postcss@npm:^8.4.33, postcss@npm:^8.4.38, postcss@npm:^8.4.5":
+"postcss@npm:^8.4.23, postcss@npm:^8.4.29, postcss@npm:^8.4.33, postcss@npm:^8.4.38":
   version: 8.4.38
   resolution: "postcss@npm:8.4.38"
   dependencies:
@@ -9463,7 +9474,7 @@ __metadata:
     "@zerodevx/svelte-toast": "npm:^0.9.5"
     autoprefixer: "npm:^10.4.16"
     electron-context-menu: "npm:^3.6.1"
-    eslint-plugin-svelte: "npm:^2.35.1"
+    eslint-plugin-svelte: "npm:^2.41.0"
     filesize: "npm:^10.1.0"
     humanize-duration: "npm:^3.31.0"
     jsdom: "npm:^23.2.0"
@@ -9912,6 +9923,15 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 10c0/fbfe717094ace0aa8d6332d7ef5ce727259815bd8d8815700853f4faf23aacbd7192522f0dc5af6df52ef4fa85a355ebd2f5d39f554bd028200d6cf481ab9b53
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.6.2":
+  version: 7.6.2
+  resolution: "semver@npm:7.6.2"
+  bin:
+    semver: bin/semver.js
+  checksum: 10c0/97d3441e97ace8be4b1976433d1c32658f6afaff09f143e52c593bae7eef33de19e3e369c88bd985ce1042c6f441c80c6803078d1de2a9988080b66684cbb30c
   languageName: node
   linkType: hard
 
@@ -10602,7 +10622,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"svelte-eslint-parser@npm:>=0.33.0 <1.0.0, svelte-eslint-parser@npm:^0.33.1":
+"svelte-eslint-parser@npm:^0.33.1":
   version: 0.33.1
   resolution: "svelte-eslint-parser@npm:0.33.1"
   dependencies:
@@ -10617,6 +10637,24 @@ __metadata:
     svelte:
       optional: true
   checksum: 10c0/2a3b5e2a91ed34eccfbf7aee43d3f64f2f49c32d9f0694d45cecd12f41bac0e251f43ac8839980f8158a566452ebeb576a9e188a5822868286f75a1136736b97
+  languageName: node
+  linkType: hard
+
+"svelte-eslint-parser@npm:^0.39.2":
+  version: 0.39.2
+  resolution: "svelte-eslint-parser@npm:0.39.2"
+  dependencies:
+    eslint-scope: "npm:^7.2.2"
+    eslint-visitor-keys: "npm:^3.4.3"
+    espree: "npm:^9.6.1"
+    postcss: "npm:^8.4.38"
+    postcss-scss: "npm:^4.0.9"
+  peerDependencies:
+    svelte: ^3.37.0 || ^4.0.0 || ^5.0.0-next.115
+  peerDependenciesMeta:
+    svelte:
+      optional: true
+  checksum: 10c0/c9fbb1ef71c88e06e079724e3605636656b5742d5fc5e1d90e46b35145cf45fde1a661674cb642b3c888633c8c191f434b8d18b90f8859d6355314d36ceabc75
   languageName: node
   linkType: hard
 
